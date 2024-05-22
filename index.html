@@ -219,6 +219,7 @@
             flex: 1;
             color: #333;
             text-align: left;
+            margin-right: 2em; /* Add some space between text and image */
         }
         .app-section .app-description ul {
             list-style: none;
@@ -226,6 +227,16 @@
         }
         .app-section .app-description ul li {
             margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+        }
+        .app-section .app-description ul li::before {
+            content: '•';
+            color: #0A3778;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 0.5em;
         }
         .app-section .app-image {
             flex: 1;
@@ -235,7 +246,7 @@
         }
         .app-section .app-image img {
             width: 40%;
-            height: 10%;
+            height: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
         }
@@ -389,9 +400,10 @@
             </div>
             <div class="app-description">
                 <ul>
-                    <li>Notre application permet une gestion simple et efficace des réservations.</li>
-                    <li>Téléchargez-la dès maintenant pour profiter de toutes nos fonctionnalités.</li>
-                    <li>Accédez aux terrains de manière autonome et bénéficiez de tarifs ajustés automatiquement grâce à notre application mobile sur mesure.</li>
+                    <li>Des tarifs qui s'ajustent automatiquement pour les licenciés du club</li>
+                    <li>Une gestion simple et intuitive</li>
+                    <li>Un accès au terrain autonome</li>
+                    <li>Défiez les équipes adversaires et devenez le maître du Village Padel</li>
                 </ul>
             </div>
         </div>
