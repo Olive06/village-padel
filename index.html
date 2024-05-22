@@ -219,23 +219,25 @@
             flex: 1;
             color: #333;
             text-align: left;
-            margin-right: 2em; /* Add some space between text and image */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Distribute evenly */
-            height: 100%; /* Match height of the image section */
         }
         .app-section .app-description ul {
             list-style: none;
             padding: 0;
         }
         .app-section .app-description ul li {
-            margin-bottom: 0.5em;
+            margin-bottom: 1em;
         }
         .app-section .app-description ul li span {
             font-weight: bold;
             display: block;
-            margin-bottom: 0.3em;
+            position: relative;
+            padding-left: 1.2em;
+        }
+        .app-section .app-description ul li span::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #0A3778; /* Star color matching the theme */
         }
         .app-section .app-image {
             flex: 1;
@@ -245,7 +247,7 @@
         }
         .app-section .app-image img {
             width: 40%;
-            height: auto;
+            height: 10%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
         }
@@ -283,10 +285,6 @@
             }
             .app-section .app-image img {
                 max-width: 80%;
-            }
-            .app-section .app-description {
-                margin-right: 0;
-                height: auto;
             }
         }
         @media (max-width: 480px) {
@@ -403,10 +401,18 @@
             </div>
             <div class="app-description">
                 <ul>
-                    <li><span>Une application adaptée aux clubs de Tennis</span> Faites profiter vos licenciés de tarifs préférentiels, le prix de la réservation s'ajuste automatiquement en fonction du nombre de licenciés dans la partie.</li>
-                    <li><span>Découvrez et défiez d'autres équipes</span> Créez votre équipe, puis mesurez-vous aux autres villageois. Vous n'avez pas 4 joueurs pour votre partie? Pas de soucis, utilisez la section DEFI et rejoignez ou créez une partie, et les villageois viendront vous rejoindre.</li>
-                    <li><span>Des fonctionnalités simples</span> L'accès au terrain se fait en un clic depuis l'application et déclenche automatiquement l'éclairage si la luminosité est faible.</li>
-                    <li><span>Défiez les équipes adversaires et devenez le maître du Village Padel</span> Utilisez notre application pour organiser des défis et participer à des compétitions, renforçant ainsi l'esprit de communauté.</li>
+                    <li><span>Une application adaptée aux clubs de Tennis</span>
+                        Faites profiter vos licenciés de tarifs préférentiels, le prix de la réservation s'ajuste automatiquement en fonction du nombre de licenciés dans la partie.
+                    </li>
+                    <li><span>Découvrez et défiez d'autres équipes</span>
+                        Créez votre équipe, puis mesurez-vous aux autres villageois. Vous n'avez pas 4 joueurs pour votre partie? Pas de soucis, utilisez la section DEFI et rejoignez ou créez une partie, et les villageois viendront vous rejoindre.
+                    </li>
+                    <li><span>Des fonctionnalités simples</span>
+                        L'accès au terrain se fait en un clic depuis l'application et déclenche automatiquement l'éclairage si la luminosité est faible.
+                    </li>
+                    <li><span>Défiez les équipes adversaires et devenez le maître du Village Padel</span>
+                        Utilisez notre application pour organiser des défis et participer à des compétitions, renforçant ainsi l'esprit de communauté.
+                    </li>
                 </ul>
             </div>
         </div>
