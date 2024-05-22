@@ -105,6 +105,12 @@
             height: 200px;
             perspective: 1000px;
             cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px); /* Hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
         }
         .card-inner {
             position: absolute;
@@ -113,7 +119,6 @@
             text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .card:hover .card-inner {
             transform: rotateY(180deg);
@@ -276,7 +281,7 @@
         <p>Nous aidons les clubs ruraux à développer le padel sans frais grâce à des accords avantageux avec les mairies.</p>
     </section>
     <section class="section" id="partnership">
-        <h2>Un partenariat innovant</h2>
+        <h2 class="partnership-title">Un partenariat innovant</h2>
         <div class="partnership-content">
             <div class="partnership-item">
                 <h3>Mairie</h3>
@@ -307,21 +312,31 @@
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true');">
-                        Entretien du court
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true');">
+                        Une application mobile dédiée
                     </div>
                     <div class="card-back">
-                        <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
+                        <p>Notre application mobile intuitive permet de réserver facilement nos installations, avec des tarifs ajustés automatiquement pour les licenciés et les joueurs externes.</p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true');">
-                        Gestion des réservations
+                    <div class="card-front" style="background: #0A3778; color: white;"> <!-- No background image -->
+                        Un accès autonome
                     </div>
                     <div class="card-back">
-                        <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive qui ajuste automatiquement les tarifs pour les licenciés et les joueurs externes.</p>
+                        <p>Accédez aux terrains de manière autonome grâce à notre système de gestion automatisé, offrant une flexibilité maximale aux utilisateurs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true');">
+                        Entretien du court
+                    </div>
+                    <div class="card-back">
+                        <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
                     </div>
                 </div>
             </div>
