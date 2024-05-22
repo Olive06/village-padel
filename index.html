@@ -107,21 +107,20 @@
             padding: 1em;
             box-sizing: border-box;
         }
-.card-front {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    box-sizing: border-box;
-}
-
+        .card-front {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black; /* Changer la couleur du texte en noir */
+            font-size: 1.5em;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
         .card-back {
             background-color: #fff;
             color: #333;
@@ -193,6 +192,50 @@
                 font-size: 0.9em;
             }
         }
+        #partnership {
+            background: url('https://example.com/your-background-image.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 4em 1em;
+            text-align: center;
+        }
+
+        .partnership-content {
+            background: rgba(0, 0, 0, 0.5); /* Add semi-transparent background for better readability */
+            padding: 2em;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2em;
+        }
+
+        .partnership-item {
+            flex: 1 1 calc(33% - 2em);
+            max-width: calc(33% - 2em);
+            text-align: center;
+            color: white;
+        }
+
+        .partnership-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1em;
+        }
+
+        .partnership-item h3 {
+            margin-bottom: 0.5em;
+        }
+
+        .partnership-item p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .partnership-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -220,10 +263,25 @@
         <p>Votre partenaire idéal pour des installations de padel de qualité, sans frais pour les clubs et les mairies.</p>
         <a href="#services" class="cta">En savoir plus</a>
     </section>
-    <section class="section" id="accord">
-        <h2>Accord Gagnant-Gagnant</h2>
-        <p>À travers un schéma juridique simple, Village Padel installe et exploite un terrain de padel en garantissant des tarifs avantageux aux licenciés allant jusqu'à la gratuité en heures creuses.</p>
-        <img src="https://github.com/Olive06/village-padel/blob/main/Accord.png?raw=true" alt="Schéma Juridique">
+    <section class="section" id="partnership">
+        <h2>Un partenariat innovant</h2>
+        <div class="partnership-content">
+            <div class="partnership-item">
+                <img src="https://example.com/club-icon.png" alt="Club de Tennis">
+                <h3>Club de Tennis</h3>
+                <p>Le club de tennis bénéficie d'installations modernes sans frais initiaux et peut attirer de nouveaux membres grâce à l'offre de padel.</p>
+            </div>
+            <div class="partnership-item">
+                <img src="https://example.com/mairie-icon.png" alt="Mairie">
+                <h3>Mairie</h3>
+                <p>La mairie soutient le projet en fournissant l'espace nécessaire et bénéficie de nouvelles infrastructures sportives pour la communauté.</p>
+            </div>
+            <div class="partnership-item">
+                <img src="https://example.com/village-padel-icon.png" alt="Village Padel">
+                <h3>Village Padel</h3>
+                <p>Village Padel gère l'installation, l'entretien, et la réservation des terrains, garantissant ainsi des services de qualité et une gestion simplifiée.</p>
+            </div>
+        </div>
     </section>
     <section class="section" id="services">
         <h2>Nos Services</h2>
@@ -263,8 +321,8 @@
     <section class="section" id="app">
         <h2>Notre Application Mobile</h2>
         <p>Notre application permet une gestion simple et efficace des réservations. Téléchargez-la dès maintenant pour profiter de toutes nos fonctionnalités.</p>
-        <a href="#"><img src="appstore-badge.png" alt="Télécharger sur l'App Store"></a>
-        <a href="#"><img src="playstore-badge.png" alt="Télécharger sur Google Play"></a>
+        <a href="#"><img src="https://github.com/Olive06/village-padel/blob/main/Logo_App_Store_d'Apple.png?raw=true" alt="Télécharger sur l'App Store"></a>
+        <a href="#"><img src="https://raw.githubusercontent.com/Olive06/village-padel/7fedc66c4f80a480a63f3238bf10fb10c5cce088/Google_Play_2022_logo.svg" alt="Télécharger sur Google Play"></a>
     </section>
     <section class="section" id="contact">
         <h2>Contactez-nous</h2>
