@@ -23,6 +23,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            justify-content: space-between; /* Add space between elements */
         }
         header img {
             height: 50px;
@@ -31,12 +32,12 @@
         header h1 {
             font-size: 1.5em;
             margin: 0;
-            flex-grow: 1;
         }
         nav {
             background-color: #145596; /* Couleur bleue secondaire */
             border-radius: 10px;
             padding: 0.5em 1em;
+            margin-left: auto; /* Align navigation to the right */
         }
         nav a {
             color: white;
@@ -214,6 +215,7 @@
             nav {
                 justify-content: center;
                 flex-wrap: wrap;
+                margin-left: 0; /* Reset margin for small screens */
             }
             .hero {
                 padding: 3em 1em;
@@ -274,19 +276,19 @@
         <p>Nous aidons les clubs ruraux à développer le padel sans frais grâce à des accords avantageux avec les mairies.</p>
     </section>
     <section class="section" id="partnership">
-        <h2>Un partenariat innovant</h2>
+        <h2 class="partnership-title">Un partenariat innovant</h2>
         <div class="partnership-content">
             <div class="partnership-item">
                 <h3>Mairie</h3>
-                <p>La mairie soutient le projet en fournissant l'espace nécessaire et bénéficie de nouvelles infrastructures sportives pour la communauté.</p>
+                <p>La mairie soutient ce projet en fournissant l'espace nécessaire et profite de nouvelles infrastructures sportives pour la communauté.</p>
             </div>
             <div class="partnership-item">
                 <h3>Club de Tennis</h3>
-                <p>Les licenciés du club de tennis bénéficient de tarifs privilégiés allant jusqu'à la gratuité sur certaines plages horaires et le club peut attirer de nouveaux membres grâce à l'offre de padel.</p>
+                <p>Les membres du club de tennis bénéficient de tarifs préférentiels, allant jusqu'à la gratuité à certaines heures, ce qui permet au club d'attirer de nouveaux adhérents grâce à l'offre de padel.</p>
             </div>
             <div class="partnership-item">
                 <h3>Village Padel</h3>
-                <p>Village Padel gère l'installation, l'entretien, et la réservation des terrains, garantissant ainsi des services de qualité et une gestion simplifiée. Nous aidons les clubs ruraux à développer le padel avec des solutions clé en main.</p>
+                <p>Village Padel assure l'installation, l'entretien et la gestion des réservations des terrains, garantissant ainsi des services de qualité et une gestion simplifiée. Nous aidons les clubs ruraux à développer le padel avec des solutions clé en main.</p>
             </div>
         </div>
     </section>
