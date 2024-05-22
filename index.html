@@ -6,36 +6,50 @@
     <title>Village Padel</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header {
-            background-color: #333;
+            background-color: #0A3778; /* Couleur bleue principale */
             color: white;
             padding: 1em 0;
             text-align: center;
         }
         nav {
-            margin: 0;
-            padding: 1em 0;
-            background-color: #444;
+            background-color: #145596; /* Couleur bleue secondaire */
             text-align: center;
+            padding: 0.5em 0;
         }
         nav a {
             color: white;
             margin: 0 1em;
             text-decoration: none;
+            font-weight: bold;
         }
         .hero {
-            background: url('data:image/png;base64,[INSERE_L'IMAGE_BASE64_DU_TERRAIN_Padel_ICI]') no-repeat center center;
-            background-size: cover;
+            background: url('https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.29.10%20-%20A%20beautiful%20padel%20court%20with%20players%20in%20action%2C%20modern%20and%20well-lit%2C%20surrounded%20by%20greenery%20and%20a%20clear%20sky.webp') no-repeat center center/cover;
             color: white;
             text-align: center;
             padding: 5em 1em;
         }
         .hero h1 {
             margin: 0;
+            font-size: 2.5em;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        .cta {
+            background-color: #F57C00; /* Couleur orange */
+            color: white;
+            padding: 1em 2em;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1em;
         }
         .section {
             padding: 2em 1em;
@@ -44,6 +58,7 @@
         .section img {
             max-width: 100%;
             height: auto;
+            margin: 1em 0;
         }
         .section:nth-child(even) {
             background-color: #f4f4f4;
@@ -51,23 +66,33 @@
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
+            text-align: left;
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 0.5em;
+            padding: 0.7em;
             margin: 0.5em 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         .contact-form button {
             padding: 0.7em 1em;
-            background-color: #333;
+            background-color: #0A3778;
             color: white;
             border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
         footer {
-            background-color: #333;
+            background-color: #145596;
             color: white;
             text-align: center;
             padding: 1em 0;
+        }
+        footer a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -83,24 +108,24 @@
     <section class="hero">
         <h1>Village Padel - Conception, Installation et Gestion de Terrains de Padel</h1>
         <p>Votre partenaire idéal pour des installations de padel de qualité, sans frais pour les clubs et les mairies.</p>
-        <a href="#services" style="background-color: #fff; color: #333; padding: 1em 2em; text-decoration: none;">En savoir plus</a>
+        <a href="#services" class="cta">En savoir plus</a>
     </section>
     <section class="section" id="services">
         <h2>Nos Services</h2>
         <div>
             <h3>Installation</h3>
             <p>Nous installons des terrains de padel de haute qualité en partenariat avec les mairies et les clubs de tennis. Nos solutions sont clés en main et ne nécessitent aucun investissement initial de votre part.</p>
-            <img src="data:image/png;base64,[INSERE_L'IMAGE_BASE64_DU_SITE_DE_CONSTRUCTION_ICI]" alt="Installation de terrains de padel">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.29.05%20-%20A%20construction%20site%20of%20a%20padel%20court%20being%20installed%20by%20workers%20with%20modern%20equipment.%20The%20scene%20shows%20the%20progress%20of%20installation%2C%20with%20some%20parts%20o.webp" alt="Installation de terrains de padel">
         </div>
         <div>
             <h3>Location et Gestion</h3>
             <p>Nous exploitons les terrains installés et offrons des tarifs préférentiels pour les licenciés des clubs, incluant la gratuité en heures creuses.</p>
-            <img src="data:image/png;base64,[INSERE_L'IMAGE_BASE64_DU_TERRAIN_Padel_ICI]" alt="Gestion de terrains de padel">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.29.10%20-%20A%20beautiful%20padel%20court%20with%20players%20in%20action%2C%20modern%20and%20well-lit%2C%20surrounded%20by%20greenery%20and%20a%20clear%20sky.webp" alt="Gestion de terrains de padel">
         </div>
         <div>
             <h3>Application Mobile</h3>
             <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive.</p>
-            <img src="data:image/png;base64,[INSERE_L'IMAGE_BASE64_DE_L'APPLICATION_MOBILE_ICI]" alt="Application mobile">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.28.54%20-%20A%20mobile%20phone%20screen%20displaying%20a%20user-friendly%20padel%20court%20reservation%20app%2C%20showing%20features%20like%20booking%2C%20court%20availability%2C%20and%20user%20profiles.webp" alt="Application mobile">
         </div>
     </section>
     <section class="section" id="app">
