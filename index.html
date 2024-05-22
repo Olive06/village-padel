@@ -77,33 +77,54 @@
             gap: 1em;
         }
         .card {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
+            position: relative;
             width: 300px;
-            padding: 1em;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            height: 200px;
+            perspective: 1000px;
             cursor: pointer;
-            text-align: left;
         }
-        .card img {
+        .card-inner {
+            position: absolute;
             width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
             border-radius: 10px;
         }
-        .card:hover {
-            transform: scale(1.05);
+        .card-front {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 1em;
+            box-sizing: border-box;
         }
-        .card h3 {
-            margin: 0.5em 0;
+        .card-back {
+            background-color: #fff;
+            color: #333;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            box-sizing: border-box;
             text-align: center;
-        }
-        .card p {
-            display: none;
-        }
-        .card.active p {
-            display: block;
-            margin-top: 1em;
+            font-size: 1em;
         }
         .contact-form {
             max-width: 600px;
@@ -173,7 +194,7 @@
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 card.addEventListener('click', () => {
-                    card.classList.toggle('active');
+                    card.querySelector('.card-inner').classList.toggle('flipped');
                 });
             });
         });
@@ -203,19 +224,34 @@
         <h2>Nos Services</h2>
         <div class="card-container">
             <div class="card">
-                <img src="https://github.com/Olive06/village-padel/blob/main/Travaux.png?raw=true" alt="Installation gratuite">
-                <h3>Installation gratuite</h3>
-                <p>Nous installons des terrains de padel de haute qualité en partenariat avec les mairies et les clubs de tennis. Nos solutions sont clés en main et ne nécessitent aucun investissement initial de votre part.</p>
+                <div class="card-inner">
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/Travaux.png?raw=true');">
+                        Installation gratuite
+                    </div>
+                    <div class="card-back">
+                        <p>Nous installons des terrains de padel de haute qualité en partenariat avec les mairies et les clubs de tennis. Nos solutions sont clés en main et ne nécessitent aucun investissement initial de votre part.</p>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true" alt="Entretien du court">
-                <h3>Entretien du court</h3>
-                <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
+                <div class="card-inner">
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true');">
+                        Entretien du court
+                    </div>
+                    <div class="card-back">
+                        <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true" alt="Gestion des réservations">
-                <h3>Gestion des réservations</h3>
-                <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive.</p>
+                <div class="card-inner">
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true');">
+                        Gestion des réservations
+                    </div>
+                    <div class="card-back">
+                        <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -230,7 +266,7 @@
         <form class="contact-form">
             <input type="text" placeholder="Nom" required>
             <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" rows="4" required></textarea>     
+            <textarea placeholder="Message" rows="4" required></textarea>
             <button type="submit">Envoyer</button>
         </form>
         <p>Adresse : 123 Rue du Padel, Ville</p>
@@ -243,3 +279,4 @@
     </footer>
 </body>
 </html>
+
