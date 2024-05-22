@@ -14,13 +14,20 @@
         header {
             background-color: #0A3778; /* Couleur bleue principale */
             color: white;
-            padding: 1em 0;
+            padding: 1em;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header img {
+            margin-right: 1em;
+            height: 50px;
         }
         nav {
             background-color: #145596; /* Couleur bleue secondaire */
             text-align: center;
-            padding: 0.5em 0;
+            padding: 0.5em;
         }
         nav a {
             color: white;
@@ -63,6 +70,41 @@
         .section:nth-child(even) {
             background-color: #f4f4f4;
         }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 300px;
+            padding: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+            text-align: left;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            margin: 0.5em 0;
+            text-align: center;
+        }
+        .card p {
+            display: none;
+        }
+        .card.active p {
+            display: block;
+            margin-top: 1em;
+        }
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -94,10 +136,52 @@
             margin: 0 1em;
             text-decoration: none;
         }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3em 1em;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .cta {
+                padding: 0.7em 1.5em;
+                font-size: 1em;
+            }
+            nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .cta {
+                padding: 0.5em 1em;
+                font-size: 0.9em;
+            }
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
+        <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
         <h1>Village Padel</h1>
     </header>
     <nav>
@@ -110,22 +194,29 @@
         <p>Votre partenaire idéal pour des installations de padel de qualité, sans frais pour les clubs et les mairies.</p>
         <a href="#services" class="cta">En savoir plus</a>
     </section>
+    <section class="section" id="accord">
+        <h2>Accord Gagnant-Gagnant</h2>
+        <p>À travers un schéma juridique simple, Village Padel installe et exploite un terrain de padel en garantissant des tarifs avantageux aux licenciés allant jusqu'à la gratuité en heures creuses.</p>
+        <img src="https://github.com/Olive06/village-padel/blob/main/Accord.png?raw=true" alt="Schéma Juridique">
+    </section>
     <section class="section" id="services">
         <h2>Nos Services</h2>
-        <div>
-            <h3>Installation</h3>
-            <p>Nous installons des terrains de padel de haute qualité en partenariat avec les mairies et les clubs de tennis. Nos solutions sont clés en main et ne nécessitent aucun investissement initial de votre part.</p>
-            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.29.05%20-%20A%20construction%20site%20of%20a%20padel%20court%20being%20installed%20by%20workers%20with%20modern%20equipment.%20The%20scene%20shows%20the%20progress%20of%20installation%2C%20with%20some%20parts%20o.webp" alt="Installation de terrains de padel">
-        </div>
-        <div>
-            <h3>Location et Gestion</h3>
-            <p>Nous exploitons les terrains installés et offrons des tarifs préférentiels pour les licenciés des clubs, incluant la gratuité en heures creuses.</p>
-            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.29.10%20-%20A%20beautiful%20padel%20court%20with%20players%20in%20action%2C%20modern%20and%20well-lit%2C%20surrounded%20by%20greenery%20and%20a%20clear%20sky.webp" alt="Gestion de terrains de padel">
-        </div>
-        <div>
-            <h3>Application Mobile</h3>
-            <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive.</p>
-            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2015.28.54%20-%20A%20mobile%20phone%20screen%20displaying%20a%20user-friendly%20padel%20court%20reservation%20app%2C%20showing%20features%20like%20booking%2C%20court%20availability%2C%20and%20user%20profiles.webp" alt="Application mobile">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://github.com/Olive06/village-padel/blob/main/Travaux.png?raw=true" alt="Installation gratuite">
+                <h3>Installation gratuite</h3>
+                <p>Nous installons des terrains de padel de haute qualité en partenariat avec les mairies et les clubs de tennis. Nos solutions sont clés en main et ne nécessitent aucun investissement initial de votre part.</p>
+            </div>
+            <div class="card">
+                <img src="https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true" alt="Entretien du court">
+                <h3>Entretien du court</h3>
+                <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
+            </div>
+            <div class="card">
+                <img src="https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true" alt="Gestion des réservations">
+                <h3>Gestion des réservations</h3>
+                <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive.</p>
+            </div>
         </div>
     </section>
     <section class="section" id="app">
@@ -139,7 +230,7 @@
         <form class="contact-form">
             <input type="text" placeholder="Nom" required>
             <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" rows="4" required></textarea>
+            <textarea placeholder="Message" rows="4" required></textarea>     
             <button type="submit">Envoyer</button>
         </form>
         <p>Adresse : 123 Rue du Padel, Ville</p>
