@@ -108,15 +108,8 @@
             box-sizing: border-box;
         }
         .card-front {
-            width: 100%;
-            height: 100%;
             background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black; /* Changer la couleur du texte en noir */
+            color: black;
             font-size: 1.5em;
             font-weight: bold;
             box-sizing: border-box;
@@ -193,12 +186,11 @@
             }
         }
         #partnership {
-            background: url('https://example.com/your-background-image.jpg') no-repeat center center/cover;
+            background: url('https://raw.githubusercontent.com/Olive06/village-padel/main/DALL%C2%B7E%202024-05-22%2018.37.49%20-%20A%20background%20image%20that%20evokes%20the%20writing%20of%20a%20contract%2C%20with%20elements%20like%20a%20close-up%20of%20a%20pen%20signing%20a%20document%2C%20a%20clean%20desk%20with%20papers%2C%20and%20a%20c.webp') no-repeat center center/cover;
             color: white;
             padding: 4em 1em;
             text-align: center;
         }
-
         .partnership-content {
             background: rgba(0, 0, 0, 0.5); /* Add semi-transparent background for better readability */
             padding: 2em;
@@ -208,33 +200,42 @@
             justify-content: space-around;
             gap: 2em;
         }
-
         .partnership-item {
             flex: 1 1 calc(33% - 2em);
             max-width: calc(33% - 2em);
             text-align: center;
             color: white;
         }
-
-        .partnership-item img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1em;
-        }
-
         .partnership-item h3 {
             margin-bottom: 0.5em;
         }
-
         .partnership-item p {
             margin: 0;
         }
-
         @media (max-width: 768px) {
             .partnership-item {
                 flex: 1 1 100%;
                 max-width: 100%;
             }
+        }
+        .store-links img {
+            width: 150px;
+            height: auto;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .section-transition {
+            padding: 4em 1em;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .section-transition h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        .section-transition p {
+            font-size: 1.2em;
+            margin: 0;
         }
     </style>
     <script>
@@ -263,21 +264,22 @@
         <p>Votre partenaire idéal pour des installations de padel de qualité, sans frais pour les clubs et les mairies.</p>
         <a href="#services" class="cta">En savoir plus</a>
     </section>
+    <section class="section-transition">
+        <h2>Découvrez nos solutions innovantes</h2>
+        <p>Nous offrons des services complets pour la conception, l'installation, et la gestion des terrains de padel.</p>
+    </section>
     <section class="section" id="partnership">
         <h2>Un partenariat innovant</h2>
         <div class="partnership-content">
             <div class="partnership-item">
-                <img src="https://example.com/club-icon.png" alt="Club de Tennis">
                 <h3>Club de Tennis</h3>
                 <p>Le club de tennis bénéficie d'installations modernes sans frais initiaux et peut attirer de nouveaux membres grâce à l'offre de padel.</p>
             </div>
             <div class="partnership-item">
-                <img src="https://example.com/mairie-icon.png" alt="Mairie">
                 <h3>Mairie</h3>
                 <p>La mairie soutient le projet en fournissant l'espace nécessaire et bénéficie de nouvelles infrastructures sportives pour la communauté.</p>
             </div>
             <div class="partnership-item">
-                <img src="https://example.com/village-padel-icon.png" alt="Village Padel">
                 <h3>Village Padel</h3>
                 <p>Village Padel gère l'installation, l'entretien, et la réservation des terrains, garantissant ainsi des services de qualité et une gestion simplifiée.</p>
             </div>
@@ -321,8 +323,10 @@
     <section class="section" id="app">
         <h2>Notre Application Mobile</h2>
         <p>Notre application permet une gestion simple et efficace des réservations. Téléchargez-la dès maintenant pour profiter de toutes nos fonctionnalités.</p>
-        <a href="#"><img src="https://github.com/Olive06/village-padel/blob/main/Logo_App_Store_d'Apple.png?raw=true" alt="Télécharger sur l'App Store"></a>
-        <a href="#"><img src="https://raw.githubusercontent.com/Olive06/village-padel/7fedc66c4f80a480a63f3238bf10fb10c5cce088/Google_Play_2022_logo.svg" alt="Télécharger sur Google Play"></a>
+        <div class="store-links">
+            <a href="#"><img src="https://github.com/Olive06/village-padel/blob/main/Logo_App_Store_d'Apple.png?raw=true" alt="Télécharger sur l'App Store"></a>
+            <a href="#"><img src="https://raw.githubusercontent.com/Olive06/village-padel/7fedc66c4f80a480a63f3238bf10fb10c5cce088/Google_Play_2022_logo.svg" alt="Télécharger sur Google Play"></a>
+        </div>
     </section>
     <section class="section" id="contact">
         <h2>Contactez-nous</h2>
