@@ -107,39 +107,21 @@
             padding: 1em;
             box-sizing: border-box;
         }
-        .card-front {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-        .card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 10px;
-        }
-        .card-front span {
-            position: relative;
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-            z-index: 1;
-            text-align: center;
-            padding: 0.5em;
-            background-color: rgba(0, 0, 0, 0.5); /* Optional: To enhance text readability */
-            border-radius: 5px;
-        }
+.card-front {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
         .card-back {
             background-color: #fff;
             color: #333;
@@ -248,9 +230,8 @@
         <div class="card-container">
             <div class="card">
                 <div class="card-inner">
-                    <div class="card-front">
-                        <img src="https://github.com/Olive06/village-padel/blob/main/Travaux.png?raw=true" alt="Installation gratuite">
-                        <span>Installation gratuite</span>
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/Travaux.png?raw=true');">
+                        Installation gratuite
                     </div>
                     <div class="card-back">
                         <p>Nous installons des terrains de padel de haute qualité en partenariat avec les mairies et les clubs de tennis. Nos solutions sont clés en main et ne nécessitent aucun investissement initial de votre part.</p>
@@ -259,9 +240,8 @@
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <div class="card-front">
-                        <img src="https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true" alt="Entretien du court">
-                        <span>Entretien du court</span>
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/maintenance.png?raw=true');">
+                        Entretien du court
                     </div>
                     <div class="card-back">
                         <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
@@ -270,9 +250,8 @@
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <div class="card-front">
-                        <img src="https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true" alt="Gestion des réservations">
-                        <span>Gestion des réservations</span>
+                    <div class="card-front" style="background-image: url('https://github.com/Olive06/village-padel/blob/main/reservation.png?raw=true');">
+                        Gestion des réservations
                     </div>
                     <div class="card-back">
                         <p>Réservez et accédez à nos installations facilement grâce à notre application mobile intuitive.</p>
