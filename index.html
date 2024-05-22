@@ -290,18 +290,23 @@
         }
 
         footer {
-            background-color: #145596;
+            background-color: #0A3778; /* Same color as the app bar */
             color: white;
+            padding: 1em;
             text-align: center;
-            padding: 1em 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        footer a {
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+        .footer-links a {
             color: white;
-            margin: 0 1em;
             text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
+            margin: 0 1em;
         }
         
         @media (max-width: 480px) {
