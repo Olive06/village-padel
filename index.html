@@ -375,6 +375,23 @@
                 scroll-snap-align: start;
                 margin-right: 1em;
             }
+            .app-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .app-section .app-image, .app-section .app-description {
+                width: 100%;
+                padding: 0 1em;
+            }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section .about-image, .about-section .about-text {
+                width: 100%;
+                padding: 0 1em;
+            }
         }
         @media (max-width: 480px) {
             .hero h1 {
@@ -523,7 +540,7 @@
         </div>
     </section>
     <section class="section" id="app">
-        <h2 class="section-title-small">Notre Application Mobile</h2>
+        <h2 class="section-title">Notre Application Mobile</h2>
         <div class="app-section">
             <div class="app-image">
                 <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/reservation_licencie-nobg.png" alt="Village Padel App">
