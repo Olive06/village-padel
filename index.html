@@ -363,6 +363,18 @@
                 max-width: 100%; /* Full width for items */
                 flex: 1 1 100%;
             }
+            .card-container {
+                flex-direction: row;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+            .card {
+                min-width: 60%;
+                flex: 0 0 auto;
+                scroll-snap-align: start;
+                margin-right: 1em;
+            }
         }
         @media (max-width: 480px) {
             .hero h1 {
