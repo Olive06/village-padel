@@ -252,6 +252,39 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
         }
+        .about-section {
+            display: flex;
+            align-items: center;
+            padding: 2em;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2em 0;
+        }
+        .about-section .about-image {
+            flex: 1;
+            padding-right: 2em;
+        }
+        .about-section .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-section .about-text {
+            flex: 2;
+            color: #333;
+        }
+        .about-section .about-text h2 {
+            font-size: 2em;
+            color: #0A3778;
+            margin-bottom: 0.5em;
+        }
+        .about-section .about-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0;
+        }
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -287,8 +320,19 @@
             .app-section .app-image img {
                 max-width: 80%;
             }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section .about-image {
+                padding-right: 0;
+                margin-bottom: 1em;
+            }
+            .about-section .about-image img {
+                max-width: 80%;
+                margin: 0 auto;
+            }
         }
-
         footer {
             background-color: #0A3778; /* Same color as the app bar */
             color: white;
@@ -308,7 +352,6 @@
             text-decoration: none;
             margin: 0 1em;
         }
-        
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.5em;
@@ -412,7 +455,7 @@
             <div class="card">
                 <div class="card-inner">
                    <div class="card-front" style="background: #0A3778; color: white;"> <!-- No background image -->
-                        Entretient du Padel
+                        Entretien du Padel
                     </div>
                     <div class="card-back">
                         <p>Nous nous chargeons de l'entretien des installations pour assurer leur qualité et leur durabilité.</p>
@@ -439,6 +482,15 @@
         <div class="store-links">
             <a href="#"><img class="app-store" src="https://raw.githubusercontent.com/Olive06/village-padel/52a30c6c3d07bdceb0e1dd0d78a7e4dc91a8f26e/appstore.svg" alt="Télécharger sur l'App Store"></a>
             <a href="#"><img class="google-play" src="https://github.com/Olive06/village-padel/blob/main/google-play-badge.png?raw=true" alt="Télécharger sur Google Play"></a>
+        </div>
+    </section>
+    <section class="section about-section" id="about">
+        <div class="about-image">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/A%20vibrant%20and%20modern%20tennis%20club%20scene%20with%20multiple%20padel%20courts%20in%20the%20background.%20Players%20are%20actively%20engaged%20in%20padel%20games%2C%20showcasing%20the%20sport.webp" alt="À propos de nous">
+        </div>
+        <div class="about-text">
+            <h2>À propos de nous</h2>
+            <p>Nous sommes trois passionnés de tennis et de padel qui ont constaté que l'engouement pour le padel profite principalement aux clubs privés. Notre mission est d'aider les clubs de tennis publics à retenir leurs licenciés et à en attirer de nouveaux en proposant des installations de padel de qualité. En collaborant avec les clubs de tennis et les municipalités, nous offrons des solutions clés en main sans frais initiaux, permettant ainsi aux clubs de diversifier leur offre sportive et de bénéficier de l'engouement pour le padel.</p>
         </div>
     </section>
     <section class="section" id="contact">
