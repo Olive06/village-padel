@@ -353,6 +353,24 @@
             .hamburger.active + nav {
                 display: flex;
             }
+            .section-title {
+                font-size: 1.5em; /* Adjusted font size for mobile */
+            }
+            .partnership-content {
+                flex-direction: column; /* Change to column layout */
+            }
+            .partnership-item {
+                max-width: 100%; /* Full width for items */
+                flex: 1 1 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
         }
         footer {
             background-color: #0A3778; /* Same color as the app bar */
@@ -372,14 +390,6 @@
             color: white;
             text-decoration: none;
             margin: 0 1em;
-        }
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.5em;
-            }
-            .hero p {
-                font-size: 0.9em;
-            }
         }
         .store-links {
             display: flex;
