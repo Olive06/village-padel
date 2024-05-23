@@ -201,8 +201,10 @@
         .partnership-item p {
             margin: 0;
         }
+        .section-title, .section-title-small, .about-section .about-text h2 {
+            font-size: 2.5em; /* Consistent font size */
+        }
         .section-title {
-            font-size: 2.5em;
             margin-bottom: 1em;
             color: #0A3778; /* Same color as the app bar */
             font-weight: bold;
@@ -284,7 +286,6 @@
             color: #333;
         }
         .about-section .about-text h2 {
-            font-size: 2em;
             color: #0A3778;
             margin-bottom: 0.5em;
             text-align: center; /* Center subtitle */
@@ -295,7 +296,6 @@
             margin: 0;
         }
         .section-title-small {
-            font-size: 2em;
             color: #0A3778; /* Same color as the app bar */
             font-weight: bold;
             text-align: center;
@@ -353,7 +353,7 @@
             .hamburger.active + nav {
                 display: flex;
             }
-            .section-title {
+            .section-title, .section-title-small, .about-section .about-text h2 {
                 font-size: 1.5em; /* Adjusted font size for mobile */
             }
             .partnership-content {
@@ -540,7 +540,7 @@
         </div>
     </section>
     <section class="section" id="app">
-        <h2 class="section-title">Notre Application Mobile</h2>
+        <h2 class="section-title-small">Notre Application Mobile</h2>
         <div class="app-section">
             <div class="app-image">
                 <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/reservation_licencie-nobg.png" alt="Village Padel App">
