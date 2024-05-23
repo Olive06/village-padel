@@ -27,11 +27,15 @@
         }
         header img {
             height: 50px;
-            margin-right: 1em;
+            margin-right: 0.5em; /* Reduced margin */
         }
         header h1 {
             font-size: 1.5em;
             margin: 0;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
         }
         nav {
             background-color: #145596; /* Couleur bleue secondaire */
@@ -39,6 +43,7 @@
             padding: 0.5em 1em;
             display: flex;
             align-items: center;
+            margin-right: 1em; /* Add space on the right */
         }
         nav a {
             color: white;
@@ -304,6 +309,10 @@
                 width: 100%;
                 padding: 0.5em 1.5em; /* Adjusted right padding */
             }
+            .header-left {
+                display: flex;
+                align-items: center;
+            }
             header img {
                 height: 40px; /* Adjust size as needed */
                 margin-right: 0.5em;
@@ -409,8 +418,10 @@
 </head>
 <body>
     <header>
-        <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
-        <h1>Village Padel</h1>
+        <div class="header-left">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
+            <h1>Village Padel</h1>
+        </div>
         <nav>
             <a href="#partnership">Notre Offre Club</a>
             <a href="#app">Application Mobile</a>
