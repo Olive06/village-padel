@@ -293,11 +293,6 @@
             header img {
                 margin-bottom: 1em;
             }
-            nav {
-                justify-content: center;
-                flex-wrap: wrap;
-                margin-left: 0; /* Reset margin for small screens */
-            }
             .hero {
                 padding: 3em 1em;
             }
@@ -307,30 +302,30 @@
             .hero p {
                 font-size: 1em;
             }
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: #0A3778;
+            }
             nav a {
                 display: block;
                 margin: 0.5em 0;
             }
-            .app-section {
-                flex-direction: column;
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                margin-left: auto;
             }
-            .app-section .app-image {
-                margin-bottom: 1em;
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 4px 0;
             }
-            .app-section .app-image img {
-                max-width: 80%;
-            }
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-section .about-image {
-                padding-right: 0;
-                margin-bottom: 1em;
-            }
-            .about-section .about-image img {
-                max-width: 80%;
-                margin: 0 auto;
+            .hamburger.active + nav {
+                display: flex;
             }
         }
         footer {
@@ -385,6 +380,14 @@
                     card.querySelector('.card-inner').classList.toggle('flipped');
                 });
             });
+
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
         });
     </script>
 </head>
@@ -392,9 +395,15 @@
     <header>
         <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
         <h1>Village Padel</h1>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <nav>
-            <a href="#services">Nos Services</a>
+            <a href="#partnership">Notre Offre Club</a>
             <a href="#app">Application Mobile</a>
+            <a href="#about">À propos</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -480,8 +489,8 @@
             </div>
         </div>
         <div class="store-links">
-            <a href="#"><img class="app-store" src="https://raw.githubusercontent.com/Olive06/village-padel/52a30c6c3d07bdceb0e1dd0d78a7e4dc91a8f26e/appstore.svg" alt="Télécharger sur l'App Store"></a>
-            <a href="#"><img class="google-play" src="https://github.com/Olive06/village-padel/blob/main/google-play-badge.png?raw=true" alt="Télécharger sur Google Play"></a>
+            <a href="#"><img class="app-store" src="https://raw.githubusercontent.com/Olive06/village-padel/main/app_store_logo.webp" alt="Télécharger sur l'App Store"></a>
+            <a href="#"><img class="google-play" src="https://raw.githubusercontent.com/Olive06/village-padel/main/google_play_logo.webp" alt="Télécharger sur Google Play"></a>
         </div>
     </section>
     <section class="section about-section" id="about">
