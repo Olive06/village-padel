@@ -37,11 +37,12 @@
             background-color: #145596; /* Couleur bleue secondaire */
             border-radius: 10px;
             padding: 0.5em 1em;
-            margin-left: auto; /* Align navigation to the right */
+            display: flex;
+            align-items: center;
         }
         nav a {
             color: white;
-            margin: 0 1em;
+            margin: 0 0.5em;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
@@ -296,29 +297,20 @@
             margin-bottom: 0.5em;
         }
         @media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0.5em 1.5em; /* Adjusted right padding */
-    }
-    header img {
-        height: 40px; /* Adjust size as needed */
-        margin-right: 0.5em;
-    }
-    header h1 {
-        font-size: 1.2em; /* Adjust size as needed */
-        margin: 0;
-    }
-            .hero {
-                padding: 3em 1em;
+            header {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0.5em 1.5em; /* Adjusted right padding */
             }
-            .hero h1 {
-                font-size: 2em;
+            header img {
+                height: 40px; /* Adjust size as needed */
+                margin-right: 0.5em;
             }
-            .hero p {
-                font-size: 1em;
+            header h1 {
+                font-size: 1.2em; /* Adjust size as needed */
+                margin: 0;
             }
             nav {
                 display: none;
@@ -326,6 +318,12 @@
                 align-items: center;
                 width: 100%;
                 background-color: #0A3778;
+                position: absolute;
+                top: 60px; /* Adjust based on header height */
+                left: 0;
+                padding: 1em 0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 999;
             }
             nav a {
                 display: block;
@@ -404,7 +402,6 @@
             const nav = document.querySelector('nav');
 
             hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
                 nav.classList.toggle('active');
             });
         });
@@ -414,17 +411,17 @@
     <header>
         <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
         <h1>Village Padel</h1>
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <nav>
             <a href="#partnership">Notre Offre Club</a>
             <a href="#app">Application Mobile</a>
             <a href="#about">À propos</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
     <section class="hero">
         <h1>Village Padel - Installation et Gestion de Terrains de Padel</h1>
