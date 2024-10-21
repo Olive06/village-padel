@@ -353,6 +353,22 @@
     font-size: 1.2em;
     line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.card-text li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card-text li::before {
+    content: '•'; /* Custom bullet point */
+    position: absolute;
+    left: 0;
+    color: #0A3778; /* Same blue color from your brand */
+    font-size: 1.5rem;
 }
 
         .contact-form {
@@ -858,24 +874,27 @@
             </div>
         </div>
             <!-- New Partnership Section -->
-    <!-- New Partnership Cards Section -->
-    <div class="partnership-hero-section">
-        <h2 class="partnership-title">Partenariat pour le Développement du Padel</h2>
-        <div class="card-container">
-            <div class="card">
-                <h3 class="card-title">Boostez votre club avec un Village Padel Gratuit</h3>
-                <p class="card-text">
-                    Village Padel s’allie aux clubs de tennis pour les aider à développer le padel sans investissement de leur part. En accord avec la mairie, nous construisons et exploitons des terrains de padel en échange de tarifs avantageux pour le tennis club de la commune.
-                </p>
-            </div>
-            <div class="card">
-                <h3 class="card-title">Equipez votre Padel des Systèmes Village Padel</h3>
-                <p class="card-text">
-                    Nous avons développé une application mobile permettant la réservation et un accès 100% autonome aux infrastructures. Notre système permet la location de matériel de tennis et padel de manière sécurisée et simple.
-                </p>
-            </div>
+<section class="partnership-hero-section">
+    <h2 class="partnership-title">Partenariat pour le Développement du Padel</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3 class="card-title">Développez le Padel sans Investissement</h3>
+            <ul class="card-text">
+                <li>Village Padel construit et exploite des terrains sans frais pour les clubs.</li>
+                <li>Accords avec la mairie pour faciliter le développement local du padel.</li>
+                <li>Tarifs privilégiés pour les clubs de tennis, jusqu’à la gratuité.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 class="card-title">Systèmes d'Accès Autonomes</h3>
+            <ul class="card-text">
+                <li>Application mobile pour une réservation et un accès 100% autonome.</li>
+                <li>Location sécurisée de matériel (raquettes, balles) via le système.</li>
+                <li>Solution simple, sécurisée et adaptée aux besoins des clubs.</li>
+            </ul>
         </div>
     </div>
+</section>
     </section>
 
 <section class="section" id="app">
