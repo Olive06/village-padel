@@ -12,44 +12,95 @@
             line-height: 1.6;
             background-color: #0A3778; /* Background color matching app bar */
         }
-        header {
+                header {
             background-color: #0A3778;
             color: white;
-            display: flex;
-            align-items: center;
             padding: 1em;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            justify-content: space-between;
             transition: all 0.3s ease;
         }
-        header img {
-            height: 50px;
-            margin-right: 0.5em;
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        header h1 {
-            font-size: 1.5em;
-            margin: 0;
-        }
-        nav {
-            background-color: #145596;
-            border-radius: 10px;
-            padding: 0.5em 1em;
+
+        .header-left {
             display: flex;
             align-items: center;
         }
-        nav a {
+
+        .header-left img {
+            height: 40px;
+            margin-right: 1em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1em;
+        }
+
+        nav ul li a {
             color: white;
-            margin: 0 0.5em;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
         }
-        nav a:hover {
-            color: #f4f4f4;
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 2px 0;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #0A3778;
+                padding: 1em;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5em 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
         }
         .hero {
             background: linear-gradient(120deg, #0A3778, #1E88E5);
@@ -455,6 +506,9 @@
             hamburger.addEventListener('click', () => {
                 nav.classList.toggle('active');
                 hamburger.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', 
+                    hamburger.classList.contains('active') ? 'true' : 'false'
+                );
             });
 
             window.addEventListener('scroll', () => {
@@ -464,31 +518,51 @@
                     header.classList.remove('sticky-header');
                 }
             });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (event) => {
+                const isClickInsideNav = nav.contains(event.target);
+                const isClickOnHamburger = hamburger.contains(event.target);
+                if (!isClickInsideNav && !isClickOnHamburger && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close menu when window is resized to larger screen
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
     </script>
 </head>
 <body>
-<header>
-    <div class="header-content">
-        <div class="header-left">
-            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
-            <h1>Village Padel</h1>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
+                <h1>Village Padel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#partnership">Notre Offre Club</a></li>
+                    <li><a href="#app">Application Mobile</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#partnership">Notre Offre Club</a></li>
-                <li><a href="#app">Application Mobile</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
+    </header>
 <section class="hero">
     <div style="text-align: center; padding: 3em 1em;">
         <h1 style="font-size: 2.5em; color: white; margin-bottom: 0.5em;">Village Padel - Installation et Automatisation de Terrains de Padel</h1>
