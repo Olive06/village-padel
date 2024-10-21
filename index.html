@@ -16,90 +16,41 @@
             background-color: #0A3778;
             color: white;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 1em 2em;
+            padding: 1em;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            justify-content: space-between;
+            transition: all 0.3s ease;
         }
-
-        .header-left {
+        header img {
+            height: 50px;
+            margin-right: 0.5em;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        nav {
+            background-color: #145596;
+            border-radius: 10px;
+            padding: 0.5em 1em;
             display: flex;
             align-items: center;
         }
-
-        .header-left img {
-            height: 50px;
-            margin-right: 1em;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1em;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
+        nav a {
             color: white;
+            margin: 0 0.5em;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
-
-        nav ul li a:hover {
-            color: #FFD700;
+        nav a:hover {
+            color: #f4f4f4;
         }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 4px 0;
-        }
-
-        /* Mobile menu collapse */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #0A3778;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                padding: 1em;
-                text-align: right;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-
-        /* Sticky Header */
-        .sticky-header {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
         .hero {
             background: linear-gradient(120deg, #0A3778, #1E88E5);
             color: white;
@@ -108,7 +59,6 @@
             margin-top: 4.5em;
             position: relative;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -119,25 +69,21 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: 0;
         }
-
         .hero h1, .hero p {
             position: relative;
             z-index: 1;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
         .hero h1 {
             margin: 0;
             font-size: 2.8em;
             font-weight: 700;
         }
-
         .hero p {
             font-size: 1.4em;
             max-width: 800px;
             margin: 1em auto;
         }
-
         .section {
             padding: 2em 1em;
             text-align: center;
@@ -145,24 +91,20 @@
             border-radius: 10px;
             margin: 1em 0;
         }
-
         .section img {
             max-width: 100%;
             height: auto;
             margin: 1em 0;
         }
-
         .section:nth-child(even) {
             background-color: #f4f4f4;
         }
-
         .card-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1em;
         }
-
         .card {
             position: relative;
             width: 300px;
@@ -172,12 +114,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-
         .card-inner {
             position: absolute;
             width: 100%;
@@ -186,11 +126,9 @@
             transition: transform 0.6s;
             transform-style: preserve-3d;
         }
-
         .card:hover .card-inner {
             transform: rotateY(180deg);
         }
-
         .card-front, .card-back {
             position: absolute;
             width: 100%;
@@ -203,7 +141,6 @@
             padding: 1em;
             box-sizing: border-box;
         }
-
         .card-front {
             background-position: center;
             color: black;
@@ -211,7 +148,6 @@
             font-weight: bold;
             box-sizing: border-box;
         }
-
         .card-back {
             background-color: #fff;
             color: #333;
@@ -221,13 +157,11 @@
             text-align: center;
             font-size: 1em;
         }
-
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
             text-align: left;
         }
-
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 0.7em;
@@ -235,7 +169,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         .contact-form button {
             padding: 0.7em 1em;
             background-color: #0A3778;
@@ -244,9 +177,247 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+        .partnership-content {
+            padding: 2em;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2em;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .partnership-item {
+            flex: 1 1 calc(33% - 2em);
+            max-width: calc(33% - 2em);
+            text-align: justify;
+            color: #333;
+        }
+        .partnership-item h3 {
+            margin-bottom: 0.5em;
+            color: #0A3778;
+            text-align: center;
+        }
+        .partnership-item p {
+            margin: 0;
+        }
+        .section-title, .section-title-small, .about-section .about-text h2 {
+            font-size: 2.5em;
+        }
+        .section-title {
+            margin-bottom: 1em;
+            color: #0A3778;
+            font-weight: bold;
+            text-align: center;
+            background-color: white;
+            padding: 1em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -2em;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+        .app-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2em;
+        }
+        .app-section .app-description {
+            flex: 1;
+            color: #333;
+            text-align: left;
+        }
+        .app-section .app-description ul {
+            list-style: none;
+            padding: 0;
+        }
+        .app-section .app-description ul li {
+            margin-bottom: 1.5em;
+        }
+        .app-section .app-description ul li span {
+            font-weight: bold;
+            display: block;
+            position: relative;
+            padding-left: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .app-section .app-description ul li span::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #0A3778;
+        }
+        .app-section .app-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .app-section .app-image img {
+            width: 40%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .about-section {
+            display: flex;
+            align-items: center;
+            padding: 2em;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2em 0;
+            text-align: justify;
+        }
+        .about-section .about-image {
+            flex: 1;
+            padding-right: 2em;
+        }
+        .about-section .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-section .about-text {
+            flex: 2;
+            color: #333;
+        }
+        .about-section .about-text h2 {
+            color: #0A3778;
+            margin-bottom: 0.5em;
+            text-align: center;
+        }
+        .about-section .about-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .section-title-small {
+            color: #0A3778;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        .announcement {
+            background: linear-gradient(135deg, rgba(10, 55, 120, 0.9), rgba(255, 153, 51, 0.9));
+            color: white;
+            text-align: center;
+            padding: 2.5em 2em;
+            margin: 2em auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 85%;
+            position: relative;
+            overflow: hidden;
+        }
+        .announcement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .announcement > * {
+            position: relative;
+            z-index: 2;
+        }
+        .announcement h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .announcement p {
+            font-size: 1.2em;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto 1.5em;
+            color: white;
+        }
+        .announcement a {
+            background-color: #FFD700;
+            color: #0A3778;
+            padding: 1em 2.5em;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .announcement a:hover {
+            background-color: #FFF;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .store-links {
+            margin-top: 2em;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .store-links img {
+            width: 140px;
+            transition: transform 0.3s ease;
+        }
+        .store-links img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .card-container {
+                flex-direction: row;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+            .card {
+                min-width: 60%;
+                flex: 0 0 auto;
+                scroll-snap-align: start;
+                margin-right: 1em;
+            }
+            .app-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .app-section .app-image, .app-section .app-description {
+                width: 100%;
+                padding: 0 1em;
+            }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section .about-image, .about-section .about-text {
+                width: 100%;
+                padding: 0 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.2em;
+            }
+            .hero p {
+                font-size: 0.8em;
+            }
+        }
         footer {
-            background-color: #0A3778;
+            background-color: #0A3778; /* Same color as the app bar */
             color: white;
             padding: 1em;
             text-align: center;
@@ -254,36 +425,31 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 1em;
         }
-
         .footer-links a {
             color: white;
             text-decoration: none;
             margin: 0 1em;
         }
-
         .store-links img {
             width: 150px;
             height: auto;
         }
-
         .store-links img.app-store {
-            height: 50px;
+            height: 50px; /* Set a specific height for both icons */
         }
-
         .store-links img.google-play {
-            height: 50px;
+            height: 50px; /* Set a specific height for both icons */
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('nav ul');
+            const nav = document.querySelector('nav');
             const header = document.querySelector('header');
 
             hamburger.addEventListener('click', () => {
@@ -303,25 +469,26 @@
 </head>
 <body>
 <header>
-    <div class="header-left">
-        <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
-        <h1>Village Padel</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="#partnership">Notre Offre Club</a></li>
-            <li><a href="#app">Application Mobile</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/logo_old.png" alt="Village Padel Logo">
+            <h1>Village Padel</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#partnership">Notre Offre Club</a></li>
+                <li><a href="#app">Application Mobile</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-    </nav>
+    </div>
 </header>
-
 <section class="hero">
     <div style="text-align: center; padding: 3em 1em;">
         <h1 style="font-size: 2.5em; color: white; margin-bottom: 0.5em;">Village Padel - Installation et Automatisation de Terrains de Padel</h1>
