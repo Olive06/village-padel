@@ -58,6 +58,58 @@
             font-weight: bold;
         }
 
+            .testimonial-sec-simple {
+        padding: 60px 0;
+        text-align: center;
+        background-color: transparent; /* Transparent background */
+    }
+
+    .testimonial-sec-simple .heading {
+        font-size: 2.5rem;
+        color: #FF9933; /* Keep the blue color for the title */
+        margin-bottom: 30px;
+    }
+
+    .testimonial-carousel .item {
+        padding: 20px;
+    }
+
+    .icon-holder {
+        font-size: 30px;
+        color: #fff; /* White icon */
+        margin-bottom: 15px;
+    }
+
+    .testimonial-sec-simple .text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff !important;
+    text-align: center; /* Ensure the text is centered */
+}
+
+    .testimonial-carousel .owl-nav {
+        display: none; /* Hide next/prev buttons */
+    }
+
+    .testimonial-carousel .owl-dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .testimonial-carousel .owl-dot span {
+        width: 12px;
+        height: 12px;
+        margin: 5px;
+        background: #ccc;
+        display: inline-block;
+        transition: background-color 200ms ease;
+        border-radius: 50%;
+    }
+
+    .testimonial-carousel .owl-dot.active span {
+        background-color: #0A3778;
+    }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -789,10 +841,46 @@
         </div>
     </div>
 </section>
-<section class="section about-section" id="about">
-    <div class="about-text">
-        <h2>À propos de nous</h2>
-        <p>Nous sommes trois passionnés de tennis et de padel qui ont constaté que l'engouement pour le padel profite principalement aux clubs privés. Notre mission est d'aider les clubs de tennis publics à retenir leurs licenciés et à en attirer de nouveaux en proposant des installations de padel de qualité. En collaborant avec les clubs de tennis et les municipalités, nous offrons des solutions clés en main sans frais initiaux, permettant ainsi aux clubs de diversifier leur offre sportive et de bénéficier de l'engouement pour le padel.</p>
+<!-- Testimonial Section (Text on Transparent Background) -->
+<section class="testimonial-sec-simple" id="about">
+    <div class="container">
+        <div class="testimonial-title">
+            <h1 class="heading">À PROPOS DE NOUS</h1>
+        </div>
+        <div class="testimonial-carousel owl-carousel owl-theme">
+            <div class="item text-center">
+                <div class="icon-holder">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="text">
+                    Nous sommes trois passionnés de tennis et de padel qui ont constaté que l'engouement pour le padel profite principalement aux clubs privés.
+                </p>
+            </div>
+            <div class="item text-center">
+                <div class="icon-holder">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="text">
+                    Notre mission est d'aider les clubs de tennis publics à retenir leurs licenciés et à en attirer de nouveaux en proposant des installations de padel de qualité.
+                </p>
+            </div>
+            <div class="item text-center">
+                <div class="icon-holder">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="text">
+                    En collaborant avec les clubs de tennis et les municipalités, nous offrons des solutions clés en main sans frais initiaux, permettant ainsi aux clubs de diversifier leur offre sportive et de bénéficier de l'engouement pour le padel.
+                </p>
+            </div>
+            <div class="item text-center">
+                <div class="icon-holder">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="text">
+                    Nous continuons bien entendu de jouer régulièrement et espérons donc vous croiser ou partager une partie avec vous!
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 <section class="section" id="contact">
@@ -813,5 +901,25 @@
     </div>
     <p>&copy; 2024 Village Padel. Tous droits réservés.</p>
 </footer>
+<!-- Include jQuery and Owl Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Initialize Owl Carousel -->
+<script>
+    $(document).ready(function(){
+        $(".testimonial-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            dots: true,
+            margin: 20
+        });
+    });
+</script>
 </body>
 </html>
