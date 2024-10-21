@@ -228,30 +228,53 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .partnership-content {
-            padding: 2em;
-            border-radius: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 2em;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .partnership-item {
-            flex: 1 1 calc(33% - 2em);
-            max-width: calc(33% - 2em);
-            text-align: justify;
-            color: #333;
-        }
-        .partnership-item h3 {
-            margin-bottom: 0.5em;
-            color: #0A3778;
-            text-align: center;
-        }
-        .partnership-item p {
-            margin: 0;
-        }
+    .partnership-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .partnership-item {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .partnership-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .partnership-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1rem;
+    }
+    .partnership-icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: #0A3778;
+    }
+    .partnership-item h3 {
+        font-size: 1.5rem;
+        color: #0A3778;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .partnership-item p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        text-align: center;
+    }
+    .section {
+        padding: 4rem 0;
+        background-color: #f8f9fa;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
         .section-title, .section-title-small, .about-section .about-text h2 {
             font-size: 2.5em;
         }
@@ -462,6 +485,15 @@
                 width: 100%;
                 padding: 0 1em;
             }
+        .section-title {
+            font-size: 2rem;
+        }
+        .partnership-grid {
+            grid-template-columns: 1fr;
+        }
+        .partnership-item {
+            padding: 1.5rem;
+        }
         }
         @media (max-width: 480px) {
             .hero h1 {
@@ -588,19 +620,40 @@
     </section>
 
 <section class="section" id="partnership">
-    <h2 class="section-title">Un partenariat innovant</h2>
-    <div class="partnership-content">
-        <div class="partnership-item">
-            <h3>Mairie</h3>
-            <p>La mairie soutient ce projet en fournissant l'espace nécessaire et profite de nouvelles infrastructures sportives pour la communauté.</p>
-        </div>
-        <div class="partnership-item">
-            <h3>Club de Tennis</h3>
-            <p>Les membres du club de tennis bénéficient de tarifs préférentiels, allant jusqu'à la gratuité à certaines heures, ce qui permet au club d'attirer de nouveaux adhérents grâce à l'offre de padel.</p>
-        </div>
-        <div class="partnership-item">
-            <h3>Village Padel</h3>
-            <p>Village Padel assure l'installation, l'entretien et la gestion des réservations des terrains, garantissant ainsi des services de qualité et une gestion simplifiée.</p>
+    <div class="container">
+        <h2 class="section-title">Un partenariat innovant</h2>
+        <div class="partnership-grid">
+            <div class="partnership-item">
+                <div class="partnership-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <h3>Mairie</h3>
+                <p>Soutien au projet en fournissant l'espace nécessaire. Bénéficie de nouvelles infrastructures sportives pour la communauté.</p>
+            </div>
+            <div class="partnership-item">
+                <div class="partnership-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
+                <h3>Club de Tennis</h3>
+                <p>Tarifs préférentiels pour les membres, incluant des créneaux gratuits. Attire de nouveaux adhérents grâce à l'offre de padel intégrée.</p>
+            </div>
+            <div class="partnership-item">
+                <div class="partnership-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </div>
+                <h3>Village Padel</h3>
+                <p>Installation, entretien et gestion des réservations des terrains. Garantit des services de qualité et une gestion simplifiée.</p>
+            </div>
         </div>
     </div>
 </section>
