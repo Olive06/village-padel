@@ -58,6 +58,71 @@
             font-weight: bold;
         }
 
+        #access-control {
+    padding: 5rem 0;
+}
+
+.access-control-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.access-control-section .app-description {
+    flex: 1;
+    color: #333;
+    text-align: left;
+}
+
+.access-control-section .app-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.access-control-section .app-description ul li {
+    margin-bottom: 1.5em;
+}
+
+.access-control-section .app-description ul li span {
+    font-weight: bold;
+    display: block;
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.access-control-section .app-description ul li span::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: #0A3778;
+}
+
+.access-control-section .app-image {
+    flex: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.access-control-section .app-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #0A3778;
+    text-align: center;
+    margin: 0.2em 0;
+    line-height: 1.0;
+}
+
             .testimonial-sec-simple {
         padding: 60px 0;
         text-align: center;
@@ -128,6 +193,20 @@
         }
 
         @media (max-width: 768px) {
+                .access-control-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .access-control-section .app-image,
+    .access-control-section .app-description {
+        width: 100%;
+        padding: 0 1em;
+    }
+
+    .access-control-section .app-image img {
+        width: 80%;
+    }
             nav {
                 display: none;
                 position: absolute;
@@ -800,47 +879,24 @@
     </div>
 </section>
 
-
 <section class="section" id="access-control">
-    <div class="container">
-        <h2 class="section-title">Contrôle d'Accès et Location de Matériel</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                </div>
-                <h3>Contrôle d'Accès Flexible</h3>
-                <p>Nous adaptons notre solution à vos installations existantes ou réalisons une installation complète sur mesure.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                </div>
-                <h3>Location de Matériel</h3>
-                <p>Notre boîtier intelligent facilite la location de matériel, offrant une expérience fluide pour les joueurs.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
-                        <path d="M7 7h.01"></path>
-                    </svg>
-                </div>
-                <h3>Application Mobile</h3>
-                <p>Tous les accès sont contrôlés de manière centralisée via notre application mobile Village Padel.</p>
-            </div>
+    <h2 class="section-title">Contrôle d'Accès</h2>
+    <p class="subtitle">Gestion d'accès aux terrains et au matériel</p>
+    <div class="app-section access-control-section">
+        <div class="app-description">
+            <ul>
+                <li><span>Installation simple</span> Nos systèmes de contrôle d'accès peuvent s'intégrer ou remplacer votre offre existante.</li>
+                <li><span>Adaptée aux besoins des clubs</span> Notre système est simple, peu coûteux et sécurisé.</li>
+                <li><span>Solution clé en main</span> Nous vous accompagnons de l'installation à la maintenance du système.</li>
+                <li><span>Fiabilité et support</span> Nous offrons un support continu pour garantir la performance de notre solution.</li>
+            </ul>
         </div>
-        <div class="cta-container">
-            <a href="#contact" class="cta-button">Demander une Démo</a>
+        <div class="app-image">
+            <img src="https://raw.githubusercontent.com/Olive06/village-padel/refs/heads/main/accesscontrol.webp" alt="Contrôle d'accès">
         </div>
     </div>
 </section>
+
 <!-- Testimonial Section (Text on Transparent Background) -->
 <section class="testimonial-sec-simple" id="about">
     <div class="container">
