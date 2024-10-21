@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Village Padel</title>
+
+    <!-- Owl Carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3GGLXaU64V3BW1UY+gEvPztancrB72HP6RmQ4o3VFsITFL7/+VXT0aCd/eo0vkP7X5TOf5EGxnEnJcEx7ycA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-m/6WhQyHyRmIQFV30lzNE0Ew8aBbs2FFG3HQ2JDO6rIa9LseH7a+fgdrji3/kpQzHRqqR4LzvP7z0AvShRnnA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         body {
             font-family: 'Arial', Helvetica, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #0A3778; /* Background color matching app bar */
+            background-color: #0A3778;
         }
-                header {
+        header {
             background-color: #0A3778;
             color: white;
             padding: 1em;
@@ -22,7 +27,6 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -30,34 +34,24 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
-
         .header-left img {
             height: 40px;
             margin-right: 1em;
         }
-
         nav ul {
             list-style-type: none;
-            padding: 0;
-            margin: 0;
             display: flex;
+            margin: 0;
+            padding: 0;
         }
-
         nav ul li {
             margin-left: 1em;
         }
-
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
-
         .hamburger {
             display: none;
             flex-direction: column;
@@ -66,7 +60,6 @@
             border: none;
             padding: 0;
         }
-
         .hamburger span {
             height: 3px;
             width: 25px;
@@ -74,7 +67,6 @@
             margin: 2px 0;
             display: block;
         }
-
         @media (max-width: 768px) {
             nav {
                 display: none;
@@ -85,19 +77,9 @@
                 background-color: #0A3778;
                 padding: 1em;
             }
-
             nav.active {
                 display: block;
             }
-
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav ul li {
-                margin: 0.5em 0;
-            }
-
             .hamburger {
                 display: flex;
             }
@@ -108,502 +90,55 @@
             text-align: center;
             padding: 5em 1em;
             margin-top: 4.5em;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 0;
-        }
-        .hero h1, .hero p {
-            position: relative;
-            z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .hero h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.4em;
-            max-width: 800px;
-            margin: 1em auto;
         }
         .section {
             padding: 2em 1em;
-            text-align: center;
             background-color: white;
-            border-radius: 10px;
             margin: 1em 0;
         }
         .section img {
             max-width: 100%;
             height: auto;
-            margin: 1em 0;
         }
-        .section:nth-child(even) {
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0A3778;
+            margin-bottom: 2rem;
+        }
+        .testimonial-carousel .testimonial-box {
             background-color: #f4f4f4;
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1em;
-        }
-        .card {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            perspective: 1000px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .card-inner {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
+            margin-bottom: 20px;
         }
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
+        .testimonial-carousel .testimonial-box .icon-holder {
+            font-size: 2rem;
+            color: #0A3778;
+            margin-bottom: 10px;
         }
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1em;
-            box-sizing: border-box;
-        }
-        .card-front {
-            background-position: center;
-            color: black;
-            font-size: 1.5em;
-            font-weight: bold;
-            box-sizing: border-box;
-        }
-        .card-back {
-            background-color: #fff;
+        .testimonial-carousel .testimonial-box p {
+            font-size: 1.2rem;
             color: #333;
-            transform: rotateY(180deg);
-            padding: 1em;
-            box-sizing: border-box;
-            text-align: center;
-            font-size: 1em;
+            line-height: 1.6;
         }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.7em;
-            margin: 0.5em 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            padding: 0.7em 1em;
+        .cta-button {
+            display: inline-block;
             background-color: #0A3778;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .section#access-control {
-        background-color: #f8f9fa;
-        padding: 5rem 0;
-    }
-    .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        color: #0A3778;
-        margin-bottom: 3rem;
-    }
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
-    .feature-item {
-        background-color: #ffffff;
-        border-radius: 8px;
-        padding: 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-    }
-    .feature-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 1rem;
-    }
-    .feature-icon svg {
-        width: 100%;
-        height: 100%;
-        stroke: #0A3778;
-    }
-    .feature-item h3 {
-        font-size: 1.5rem;
-        color: #0A3778;
-        margin-bottom: 1rem;
-    }
-    .feature-item p {
-        font-size: 1rem;
-        color: #333;
-        line-height: 1.6;
-    }
-    .cta-container {
-        text-align: center;
-        margin-top: 3rem;
-    }
-    .cta-button {
-        display: inline-block;
-        background-color: #0A3778;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-    .cta-button:hover {
-        background-color: #0c4a9e;
-    }
-    .partnership-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    .partnership-item {
-        background-color: #ffffff;
-        border-radius: 8px;
-        padding: 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .partnership-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    .partnership-icon {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 1rem;
-    }
-    .partnership-icon svg {
-        width: 100%;
-        height: 100%;
-        stroke: #0A3778;
-    }
-    .partnership-item h3 {
-        font-size: 1.5rem;
-        color: #0A3778;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-    .partnership-item p {
-        font-size: 1rem;
-        color: #333;
-        line-height: 1.6;
-        text-align: center;
-    }
-    .section {
-        padding: 4rem 0;
-        background-color: #f8f9fa;
-    }
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
-        .section-title, .section-title-small, .about-section .about-text h2 {
-            font-size: 2.5em;
-        }
-        .section-title {
-            margin-bottom: 1em;
-            color: #0A3778;
-            font-weight: bold;
-            text-align: center;
-            background-color: white;
-            padding: 1em;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: -2em;
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-        }
-        .app-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2em;
-        }
-        .app-section .app-description {
-            flex: 1;
-            color: #333;
-            text-align: left;
-        }
-        .app-section .app-description ul {
-            list-style: none;
-            padding: 0;
-        }
-        .app-section .app-description ul li {
-            margin-bottom: 1.5em;
-        }
-        .app-section .app-description ul li span {
-            font-weight: bold;
-            display: block;
-            position: relative;
-            padding-left: 1.2em;
-            margin-bottom: 0.5em;
-        }
-        .app-section .app-description ul li span::before {
-            content: '★';
-            position: absolute;
-            left: 0;
-            color: #0A3778;
-        }
-        .app-section .app-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .app-section .app-image img {
-            width: 40%;
-            height: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-        }
-        .about-section {
-            display: flex;
-            align-items: center;
-            padding: 2em;
-            background-color: #f4f4f4;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 2em 0;
-            text-align: justify;
-        }
-        .about-section .about-image {
-            flex: 1;
-            padding-right: 2em;
-        }
-        .about-section .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .about-section .about-text {
-            flex: 2;
-            color: #333;
-        }
-        .about-section .about-text h2 {
-            color: #0A3778;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-        .about-section .about-text p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .section-title-small {
-            color: #0A3778;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 0.5em;
-        }
-       .announcement {
-            background: linear-gradient(135deg, rgba(10, 55, 120, 0.9), rgba(255, 153, 51, 0.9));
-            color: white;
-            text-align: center;
-            padding: 2.5em 2em;
-            margin: 2em auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            max-width: 85%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .announcement::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .announcement > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .announcement h2 {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 0.5em;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .announcement p {
-            font-size: 1.2em;
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 0 auto 1.5em;
-            color: white;
-        }
-
-        .store-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 2em;
-        }
-
-        .store-links a {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .store-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        .store-links img {
-            height: 50px;
-            width: auto;
-        }
-
-        @media (max-width: 768px) {
-        .features-grid {
-            grid-template-columns: 1fr;
-        }
-        .feature-item {
-            padding: 1.5rem;
-        }
-            .hero h1 {
-                font-size: 1.5em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .store-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .store-links a {
-                margin-bottom: 1em;
-            }
-            .card-container {
-                flex-direction: row;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scroll-snap-type: x mandatory;
-            }
-            .card {
-                min-width: 60%;
-                flex: 0 0 auto;
-                scroll-snap-align: start;
-                margin-right: 1em;
-            }
-            .app-section {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .app-section .app-image, .app-section .app-description {
-                width: 100%;
-                padding: 0 1em;
-            }
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-section .about-image, .about-section .about-text {
-                width: 100%;
-                padding: 0 1em;
-            }
-        .section-title {
-            font-size: 2rem;
-        }
-        .partnership-grid {
-            grid-template-columns: 1fr;
-        }
-        .partnership-item {
-            padding: 1.5rem;
-        }
-        }
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.2em;
-            }
-            .hero p {
-                font-size: 0.8em;
-            }
-        }
-        footer {
-            background-color: #0A3778; /* Same color as the app bar */
-            color: white;
-            padding: 1em;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1em;
-        }
-        .footer-links a {
-            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
             text-decoration: none;
-            margin: 0 1em;
+            font-weight: bold;
+            margin-top: 1rem;
         }
-        .store-links img {
-            width: 150px;
-            height: auto;
-        }
-        .store-links img.app-store {
-            height: 50px; /* Set a specific height for both icons */
-        }
-        .store-links img.google-play {
-            height: 50px; /* Set a specific height for both icons */
+        .cta-button:hover {
+            background-color: #0c4a9e;
         }
     </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
@@ -612,38 +147,6 @@
 
             hamburger.addEventListener('click', () => {
                 nav.classList.toggle('active');
-                hamburger.classList.toggle('active');
-                hamburger.setAttribute('aria-expanded', 
-                    hamburger.classList.contains('active') ? 'true' : 'false'
-                );
-            });
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('sticky-header');
-                } else {
-                    header.classList.remove('sticky-header');
-                }
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (event) => {
-                const isClickInsideNav = nav.contains(event.target);
-                const isClickOnHamburger = hamburger.contains(event.target);
-                if (!isClickInsideNav && !isClickOnHamburger && nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    hamburger.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // Close menu when window is resized to larger screen
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    hamburger.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
             });
         });
     </script>
@@ -663,158 +166,144 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" aria-label="Toggle menu">
+            <button class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
     </header>
+
     <section class="hero">
-        <div style="text-align: center; padding: 3em 1em;">
-            <h1 style="font-size: 2.5em; color: white; margin-bottom: 0.5em;">Village Padel - Installation et Automatisation de Terrains de Padel</h1>
+        <div>
+            <h1>Village Padel - Installation et Automatisation de Terrains de Padel</h1>
         </div>
+    </section>
 
-        <div class="announcement" id="grisolles-opening">
-            <h2>🎉 Padel à Grisolles - Ouverture en Novembre ! 🎉</h2>
-            <p>Téléchargez notre application mobile, et soyez les premiers à réserver votre partie de padel !</p>
-
-            <div class="store-links">
-                <a href="https://apps.apple.com/fr/app/village-padel/id6504023084">
-                    <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/app_store_logo.webp" alt="Télécharger sur l'App Store">
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.villagePadel&gl=FR">
-                    <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/google_play_logo.webp" alt="Télécharger sur Google Play">
-                </a>
+    <section class="section" id="partnership">
+        <div class="container">
+            <h2 class="section-title">Un partenariat innovant</h2>
+            <div class="partnership-grid">
+                <div class="partnership-item">
+                    <div class="partnership-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Mairie</h3>
+                    <p>Soutien au projet en fournissant l'espace nécessaire. Bénéficie de nouvelles infrastructures sportives pour la communauté.</p>
+                </div>
+                <div class="partnership-item">
+                    <div class="partnership-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3>Club de Tennis</h3>
+                    <p>Tarifs préférentiels pour les membres, incluant des créneaux gratuits. Attire de nouveaux adhérents grâce à l'offre de padel intégrée.</p>
+                </div>
+                <div class="partnership-item">
+                    <div class="partnership-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h3>Village Padel</h3>
+                    <p>Installation, entretien et gestion des réservations des terrains. Garantit des services de qualité et une gestion simplifiée.</p>
+                </div>
             </div>
         </div>
     </section>
 
-<section class="section" id="partnership">
-    <div class="container">
-        <h2 class="section-title">Un partenariat innovant</h2>
-        <div class="partnership-grid">
-            <div class="partnership-item">
-                <div class="partnership-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
+    <!-- Testimonial Section (Updated About Section) -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">À PROPOS DE VILLAGE PADEL</h2>
+            <div class="testimonial-carousel owl-carousel owl-theme">
+                <div class="testimonial-box">
+                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+                    <p>Access Padel, c'est l'aventure de trois amis passionnés, voulant rendre le padel accessible à tous, pas seulement aux clubs privés.</p>
                 </div>
-                <h3>Mairie</h3>
-                <p>Soutien au projet en fournissant l'espace nécessaire. Bénéficie de nouvelles infrastructures sportives pour la communauté.</p>
-            </div>
-            <div class="partnership-item">
-                <div class="partnership-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
+                <div class="testimonial-box">
+                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+                    <p>Nous espérons équiper de plus en plus de clubs partenaires dans les années à venir.</p>
                 </div>
-                <h3>Club de Tennis</h3>
-                <p>Tarifs préférentiels pour les membres, incluant des créneaux gratuits. Attire de nouveaux adhérents grâce à l'offre de padel intégrée.</p>
-            </div>
-            <div class="partnership-item">
-                <div class="partnership-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
+                <div class="testimonial-box">
+                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+                    <p>Nous avons pensé Village Padel avec et pour les clubs désireux de faire évoluer leurs offres, sans investissements supplémentaires.</p>
                 </div>
-                <h3>Village Padel</h3>
-                <p>Installation, entretien et gestion des réservations des terrains. Garantit des services de qualité et une gestion simplifiée.</p>
             </div>
+            <a href="#contact" class="cta-button">Contactez-nous</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section" id="app">
-    <h2 class="section-title-small">Notre Application Mobile</h2>
-    <div class="app-section">
-        <div class="app-image">
-            <img src="https://github.com/Olive06/village-padel/blob/main/app_webiste_new.jpg?raw=true" alt="Village Padel application mobile">
-        </div>
-        <div class="app-description">
-            <ul>
-                <li><span>Une application adaptée aux clubs de Tennis</span> Faites profiter vos licenciés de tarifs préférentiels, le prix de la réservation s'ajuste automatiquement en fonction du nombre de licenciés dans la partie.</li>
-                <li><span>Découvrez et défiez d'autres équipes</span> Créez votre équipe, puis mesurez-vous aux autres villageois. Vous n'avez pas 4 joueurs pour votre partie? Pas de soucis, utilisez la section DEFI et rejoignez ou créez une partie, et les villageois viendront vous rejoindre.</li>
-                <li><span>Des fonctionnalités simples</span> L'accès au terrain se fait en un clic depuis l'application et déclenche automatiquement l'éclairage si la luminosité est faible.</li>
-                <li><span>Défiez les équipes adversaires et devenez le maître du Village Padel</span> Utilisez notre application pour organiser des défis et participer à des compétitions, renforçant ainsi l'esprit de communauté.</li>
-            </ul>
-        </div>
-    </div>
-    <div class="store-links">
-        <a href="https://apps.apple.com/fr/app/village-padel/id6504023084"><img class="app-store" src="https://raw.githubusercontent.com/Olive06/village-padel/main/app_store_logo.webp" alt="Télécharger sur l'App Store"></a>
-        <a href="https://play.google.com/store/apps/details?id=com.villagePadel&gl=FR"><img class="google-play" src="https://raw.githubusercontent.com/Olive06/village-padel/main/google_play_logo.webp" alt="Télécharger sur Google Play"></a>
-    </div>
-</section>
-<section class="section" id="access-control">
-    <div class="container">
-        <h2 class="section-title">Contrôle d'Accès et Location de Matériel</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                </div>
-                <h3>Contrôle d'Accès Flexible</h3>
-                <p>Nous adaptons notre solution à vos installations existantes ou réalisons une installation complète sur mesure.</p>
+    <section class="section" id="app">
+        <h2 class="section-title-small">Notre Application Mobile</h2>
+        <div class="app-section">
+            <div class="app-image">
+                <img src="https://github.com/Olive06/village-padel/blob/main/app_webiste_new.jpg?raw=true" alt="Village Padel application mobile">
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                </div>
-                <h3>Location de Matériel</h3>
-                <p>Notre boîtier intelligent facilite la location de matériel, offrant une expérience fluide pour les joueurs.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
-                        <path d="M7 7h.01"></path>
-                    </svg>
-                </div>
-                <h3>Application Mobile</h3>
-                <p>Tous les accès sont contrôlés de manière centralisée via notre application mobile Village Padel.</p>
+            <div class="app-description">
+                <ul>
+                    <li><span>Une application adaptée aux clubs de Tennis</span> Faites profiter vos licenciés de tarifs préférentiels, le prix de la réservation s'ajuste automatiquement en fonction du nombre de licenciés dans la partie.</li>
+                    <li><span>Découvrez et défiez d'autres équipes</span> Créez votre équipe, puis mesurez-vous aux autres villageois. Vous n'avez pas 4 joueurs pour votre partie? Pas de soucis, utilisez la section DEFI et rejoignez ou créez une partie, et les villageois viendront vous rejoindre.</li>
+                    <li><span>Des fonctionnalités simples</span> L'accès au terrain se fait en un clic depuis l'application et déclenche automatiquement l'éclairage si la luminosité est faible.</li>
+                </ul>
             </div>
         </div>
-        <div class="cta-container">
-            <a href="#contact" class="cta-button">Demander une Démo</a>
+        <div class="store-links">
+            <a href="https://apps.apple.com/fr/app/village-padel/id6504023084"><img class="app-store" src="https://raw.githubusercontent.com/Olive06/village-padel/main/app_store_logo.webp" alt="Télécharger sur l'App Store"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.villagePadel&gl=FR"><img class="google-play" src="https://raw.githubusercontent.com/Olive06/village-padel/main/google_play_logo.webp" alt="Télécharger sur Google Play"></a>
         </div>
-    </div>
-</section>
-<section class="section about-section" id="about">
-    <div class="about-image">
-        <img src="https://raw.githubusercontent.com/Olive06/village-padel/main/A%20vibrant%20and%20modern%20tennis%20club%20scene%20with%20multiple%20padel%20courts%20in%20the%20background.%20Players%20are%20actively%20engaged%20in%20padel%20games%2C%20showcasing%20the%20sport.webp" alt="À propos de nous">
-    </div>
-    <div class="about-text">
-        <h2>À propos de nous</h2>
-        <p>Nous sommes trois passionnés de tennis et de padel qui ont constaté que l'engouement pour le padel profite principalement aux clubs privés. Notre mission est d'aider les clubs de tennis publics à retenir leurs licenciés et à en attirer de nouveaux en proposant des installations de padel de qualité. En collaborant avec les clubs de tennis et les municipalités, nous offrons des solutions clés en main sans frais initiaux, permettant ainsi aux clubs de diversifier leur offre sportive et de bénéficier de l'engouement pour le padel.</p>
-    </div>
-</section>
-<section class="section" id="contact">
-    <h2>Contactez-nous</h2>
-    <form class="contact-form">
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" rows="4" required></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
-    <p>Email : olivier.dagnac@villagepadel.fr</p>
-    <p>Téléphone : 06 22 70 25 42</p>
-</section>
-<footer>
-    <div class="footer-links">
-        <a href="cgv.html">CGV</a>
-        <a href="cgu.html">CGU</a>
-    </div>
-    <p>&copy; 2024 Village Padel. Tous droits réservés.</p>
-</footer>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contactez-nous</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p>Email : olivier.dagnac@villagepadel.fr</p>
+        <p>Téléphone : 06 22 70 25 42</p>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="cgv.html">CGV</a>
+            <a href="cgu.html">CGU</a>
+        </div>
+        <p>&copy; 2024 Village Padel. Tous droits réservés.</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YeMN2Uv02Ng4X+q6kaRcHFnPzGhAEKqF3BgjpKQ2epqaShbAdGa+plD2Bx5yCEB4qnWqEvPqxgKu41B+V5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-oSY2bgZGonKrNrqQtInLkgV5uBggCbrV1dX2ISfyZdoB8nbfJ8Gb+qmkdJSAZ2ElZ70efVhIfIq3ZmVDwf1tVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Initialize Owl Carousel -->
+    <script>
+        $(document).ready(function(){
+            $('.testimonial-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
