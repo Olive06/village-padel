@@ -753,38 +753,42 @@
         font-size: 1rem;
     }
 
-    /* Partnership Section */
     .partnership-hero-section {
         padding: 1.5rem 1rem;
-        width: 100%; /* Ensure full width */
+        text-align: center;
     }
 
     .partnership-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         margin-bottom: 1.5rem;
+        text-align: center;
     }
+
 
     .card-container {
         gap: 1rem;
-        padding: 0 1rem;
-        flex-direction: column; /* Stack cards on mobile */
+        padding: 0 1.5rem; /* Added padding to prevent cards from going off-screen */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensures the cards are centered */
     }
 
     .card {
-        min-width: 100%;
+        width: 100%;
+        max-width: 350px; /* Limit card width on mobile */
         padding: 1.5rem;
-        margin-bottom: 1rem;
-        width: 100%; /* Full width on mobile */
+        margin: 0 auto; /* Ensures the card stays centered */
     }
 
     .card-title {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
         text-align: center;
     }
 
     .card-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        text-align: left; /* Keep the text left-aligned */
     }
 
     /* App Section */
@@ -856,20 +860,27 @@
 
     /* Contact Section */
     .contact-form {
-        padding: 0 1rem;
-        max-width: 100%; /* Ensure full width */
-        margin: 0 auto;
+        max-width: 350px; /* Limit the contact form width */
+        margin: 0 auto; /* Center the form on the page */
+        padding: 1.5rem 1.5rem; /* Ensure padding inside the form */
+        box-sizing: border-box; /* Ensure proper sizing */
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input, 
+    .contact-form textarea {
         font-size: 1rem;
         padding: 0.8rem;
-        width: 100%; /* Ensure inputs take full width */
+        width: 100%; /* Ensure full width of input elements */
+        box-sizing: border-box; /* Prevent overflow of input fields */
     }
 
     .contact-form button {
-        width: 100%; /* Ensure button is full-width on mobile */
-        padding: 0.7em;
+        width: 100%; /* Ensure button takes full width */
+    }
+
+    /* Adjustments for small screens */
+    .announcement, .hero {
+        padding: 2rem 1.5rem; /* Avoids overflow by adding proper padding */
     }
 
     /* Store Links */
