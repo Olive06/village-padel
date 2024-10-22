@@ -280,17 +280,18 @@
 }
 
 .card {
-    flex: 1 1 300px;
-    max-width: 350px;
+    flex: 1; /* Allow cards to grow */
+    min-width: 280px; /* Slightly reduced minimum width */
+    max-width: calc(50% - 1rem); /* Ensure cards take up roughly half the container minus gap */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
     text-align: left;
     backdrop-filter: blur(10px);
-    margin: 0;
 }
+
 
 /* Card Text */
 .card-text {
@@ -727,7 +728,7 @@
     }
 
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         padding: 0 1rem;
         margin-bottom: 1rem;
     }
