@@ -630,7 +630,13 @@
 }
 
 @media (max-width: 768px) {
-    /* Header & Navigation */
+    /* Set global width for body to avoid overflow */
+    html, body {
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Header and Navigation */
     header {
         padding: 1rem;
         width: 100%;
@@ -667,19 +673,12 @@
     /* Hamburger Menu Styling */
     .hamburger {
         display: flex;
-        position: relative; /* Fixed to relative for better positioning */
+        position: relative;
         padding: 0.8rem;
         z-index: 1000;
         cursor: pointer;
         background: none;
         border: none;
-        margin-left: 1rem;
-        transform: translateY(-50%); /* Add this */
-    }
-
-    .hamburger-inner {
-        min-width: 24px;
-        min-height: 24px;
     }
 
     nav {
@@ -757,6 +756,7 @@
     /* Partnership Section */
     .partnership-hero-section {
         padding: 1.5rem 1rem;
+        width: 100%; /* Ensure full width */
     }
 
     .partnership-title {
@@ -767,20 +767,20 @@
     .card-container {
         gap: 1rem;
         padding: 0 1rem;
-        flex-direction: column; /* Ensure cards stack on small screens */
+        flex-direction: column; /* Stack cards on mobile */
     }
 
     .card {
         min-width: 100%;
         padding: 1.5rem;
         margin-bottom: 1rem;
-        width: 100%; /* Full width for small screens */
+        width: 100%; /* Full width on mobile */
     }
 
     .card-title {
         font-size: 1.2rem;
         margin-bottom: 0.8rem;
-        text-align: center; /* Centered card titles for better readability */
+        text-align: center;
     }
 
     .card-text {
@@ -832,8 +832,8 @@
     /* Access Control Section */
     .access-control-section {
         padding: 1rem;
-        flex-direction: column; /* Ensures layout stacks on mobile */
-        text-align: center; /* Center-align content for better visual flow */
+        flex-direction: column;
+        text-align: center;
     }
 
     .access-control-section .app-description ul li {
@@ -857,12 +857,19 @@
     /* Contact Section */
     .contact-form {
         padding: 0 1rem;
+        max-width: 100%; /* Ensure full width */
+        margin: 0 auto;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    .contact-form input, .contact-form textarea {
         font-size: 1rem;
         padding: 0.8rem;
+        width: 100%; /* Ensure inputs take full width */
+    }
+
+    .contact-form button {
+        width: 100%; /* Ensure button is full-width on mobile */
+        padding: 0.7em;
     }
 
     /* Store Links */
@@ -888,7 +895,7 @@
     }
 }
 
-/* Extra small devices */
+/* Extra small devices (max-width: 480px) */
 @media (max-width: 480px) {
     .header-content {
         padding: 0 0.5rem;
