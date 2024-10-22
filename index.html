@@ -63,8 +63,6 @@
     margin-top: 2em;
     color: white;
     width: 100%; /* Changed from max-width: 800px */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .partnership-hero-section .partnership-title {
@@ -903,41 +901,6 @@
     }
 }
 
-/* Extra small devices (max-width: 480px) */
-@media (max-width: 480px) {
-    .header-content {
-        padding: 0 0.5rem;
-    }
-
-    .header-left h1 {
-        font-size: 1rem;
-    }
-
-    .hamburger {
-        padding: 0.5rem;
-    }
-
-    .hero {
-        padding: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 1.3rem;
-    }
-
-    .announcement h2 {
-        font-size: 1.1rem;
-    }
-
-    .app-image img {
-        width: 90%;
-    }
-}
-
         footer {
             background-color: #0A3778; /* Same color as the app bar */
             color: white;
@@ -1166,7 +1129,9 @@
         <input type="text" placeholder="Nom" required>
         <input type="email" placeholder="Email" required>
         <textarea placeholder="Message" rows="4" required></textarea>
-        <button type="submit">Envoyer</button>
+        <button type="button" onclick="sendEmail()">Envoyer un Email</button>
+    </form>
+
     </form>
     <p>Email : contact@villagepadel.fr</p>
     <p>Téléphone : 07 49 15 74 01</p>
@@ -1178,6 +1143,19 @@
     </div>
     <p>&copy; 2024 Village Padel. Tous droits réservés.</p>
 </footer>
+<script>
+    function sendEmail() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        var mailtoLink = 'mailto:contact@villagepadel.fr' +
+                         '?subject=Contact from ' + encodeURIComponent(name) +
+                         '&body=' + encodeURIComponent("Nom: " + name + "\nEmail: " + email + "\nMessage: " + message);
+
+        window.location.href = mailtoLink;
+    }
+</script>
 <!-- Include jQuery and Owl Carousel -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
